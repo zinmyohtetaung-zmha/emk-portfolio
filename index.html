@@ -18,20 +18,20 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #FFFBE6;
+            background-color: #E6D9A2; /* Light background */
         }
         .navbar {
-            background-color: #347928;
+            background-color: #8967B3; /* Dark purple */
         }
         .navbar a {
-            color: #FFFBE6;
+            color: #E6D9A2; /* Light text */
         }
         .navbar a:hover {
-            color: #FCCD2A;
+            color: #CB80AB; /* Pinkish hover */
         }
         .header {
-            background-color: #347928;
-            color: #FFFBE6;
+            background-color: #8967B3; /* Dark purple */
+            color: #E6D9A2; /* Light text */
             padding: 100px 0;
             text-align: center;
         }
@@ -39,18 +39,18 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid #FFFBE6;
+            border: 5px solid #E6D9A2; /* Light border */
         }
         .section-title {
             text-align: center;
-            color: #347928;
+            color: #8967B3; /* Dark purple */
             font-weight: bold;
             position: relative;
         }
         footer {
             text-align: center;
-            background-color: #347928;
-            color: #FFFBE6;
+            background-color: #8967B3; /* Dark purple */
+            color: #E6D9A2; /* Light text */
             padding: 20px;
             margin-top: 40px;
         }
@@ -58,19 +58,54 @@
             padding: 60px 0;
         }
         .card {
-            background-color: #C0EBA6;
+            background-color: #CB80AB; /* Pinkish card */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .social-icons a {
             margin: 0 10px;
-            color: #347928;
+            color: #8967B3; /* Dark purple icons */
             transition: color 0.3s, transform 0.3s;
         }
         .social-icons a:hover {
-            color: #FCCD2A;
+            color: #CB80AB; /* Pinkish hover */
             transform: scale(1.1);
+        }
+        button {
+            background-color: #8967B3; /* Purple button */
+            color: #E6D9A2; /* Light text */
+        }
+        button:hover {
+            background-color: #CB80AB; /* Pinkish hover */
+        }
+
+        /* Skills Section Styling */
+        .skills-section .card {
+            background-color: #E6D9A2; /* Light background for cards */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .skills-section h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #8967B3; /* Dark purple for skill name */
+        }
+        .progress {
+            background-color: #E6D9A2; /* Light background for progress bar track */
+            border-radius: 10px;
+            height: 12px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #8967B3, #CB80AB); /* Gradient progress bar */
+            height: 100%;
+            transition: width 0.4s ease;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -119,7 +154,8 @@
                 <a href="mailto:your-email@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="mt-4">
-                <a href="your-cv.pdf" class="bg-green-800 text-white py-2 px-4 rounded hover:bg-yellow-400" download>Download CV</a>
+                <a href="your-cv.pdf" class="bg-[#8967B3] text-white py-2 px-4 rounded hover:bg-[#CB80AB]" download>Download CV</a>
+
             </div>
         </div>
     </section>
@@ -144,80 +180,56 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="container mx-auto py-16" data-aos="fade-up">
+    <section id="skills" class="container mx-auto py-16 skills-section" data-aos="fade-up">
         <h2 class="section-title text-3xl mb-8">Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="card">
                 <h5 class="text-lg">HTML</h5>
                 <div class="progress">
-                    <div class="progress-bar bg-green-700" role="progressbar" style="width: 100%">100%</div>
+                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
             <div class="card">
                 <h5 class="text-lg">CSS</h5>
                 <div class="progress">
-                    <div class="progress-bar bg-green-700" role="progressbar" style="width: 90%">90%</div>
+                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
             <div class="card">
                 <h5 class="text-lg">JavaScript</h5>
                 <div class="progress">
-                    <div class="progress-bar bg-green-700" role="progressbar" style="width: 90%">90%</div>
+                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
             <div class="card">
                 <h5 class="text-lg">PHP</h5>
                 <div class="progress">
-                    <div class="progress-bar bg-green-700" role="progressbar" style="width: 90%">90%</div>
+                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="container mx-auto py-16" data-aos="fade-up">
-        <h2 class="section-title text-3xl mb-8">Contact Me</h2>
-        <div class="card">
-            <form class="space-y-6">
-                <div>
-                    <input type="text" class="form-input w-full p-3 border border-gray-300 rounded" placeholder="Your Name" required>
-                </div>
-                <div>
-                    <input type="email" class="form-input w-full p-3 border border-gray-300 rounded" placeholder="Your Email" required>
-                </div>
-                <div>
-                    <textarea class="form-input w-full p-3 border border-gray-300 rounded" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="w-full bg-green-800 text-white py-3 rounded hover:bg-yellow-400">
-                Send Message</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-green-800 text-white py-4">
-        <p class="text-center">&copy; 2024 Ei Mon Kyaw. All Rights Reserved.</p>
+    <footer>
+        <p>&copy; 2024 Ei Mon Kyaw. All rights reserved.</p>
     </footer>
 
-    <!-- AOS JS -->
+    <!-- AOS (Animate on Scroll) JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS for scroll animations
+        AOS.init();
+    </script>
 
-        // Typed.js Effect
+    <!-- Typed.js Script for Typing Effect -->
+    <script>
         var typed = new Typed('#typed', {
-            strings: ["Software Support Technician", "Web Developer", "Lifelong Learner"],
+            strings: ["Software Support Technician", "Web Developer", "HTML, CSS, JavaScript, PHP Expert"],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true
         });
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
     </script>
+
 </body>
 </html>
