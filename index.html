@@ -256,9 +256,20 @@
                 <a href="https://www.youtube.com/@eimonkyaw5521" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.instagram.com/i_mon_k?igsh=OWl0c2Vta3l2MXpq" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:eimonkyaw5521@gmail.com"><i class="fas fa-envelope"></i></a>
+                <i id="qr-btn" class="fas fa-qrcode ml-2" style="color: #624E88;"></i>
+
             </div>
             <div class="mt-4">
                 <a href="https://drive.google.com/uc?id=1EbYqDzPG5WqcWbUGDy_ASv_19sMV3gwd" class="bg-[#8967B3] text-white py-2 px-4 rounded hover:bg-[#CB80AB]" download>Download CV</a>
+            </div>
+           
+            <!-- Popup Modal for QR Code -->
+            <div id="qr-popup" class="fixed inset-0 flex justify-center items-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+                    <h3 class="text-center text-xl font-semibold mb-4">QR Code</h3>
+                    <div id="qr-code-container" class="flex justify-center mb-4"></div>
+                    <button id="close-popup" class="bg-red-500 text-white py-2 px-4 rounded w-full">Close</button>
+                </div>
             </div>
         </div>
     </section>
@@ -447,6 +458,29 @@ var typed = new Typed('#typed', {
         }, 1000); // Delay the submission by 1 second for the animation to take place
     });
 
+
+    document.getElementById('qr-btn').addEventListener('click', function() {
+        const qrLink = "https://eimonkyaw.vercel.app";
+        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrLink)}`;
+        
+        // Create an img element to display the QR code
+        const qrCodeImg = document.createElement('img');
+        qrCodeImg.src = qrCodeUrl;
+        qrCodeImg.alt = 'QR Code for https://eimonkyaw.vercel.app';
+        
+        // Append the QR code image to the container
+        const qrCodeContainer = document.getElementById('qr-code-container');
+        qrCodeContainer.innerHTML = ''; // Clear any previous QR codes
+        qrCodeContainer.appendChild(qrCodeImg);
+
+        // Show the popup
+        document.getElementById('qr-popup').classList.remove('hidden');
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        document.getElementById('qr-popup').classList.add('hidden');
+    });
     </script>
 
 </body>
